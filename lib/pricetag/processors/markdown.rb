@@ -61,7 +61,12 @@ module PriceTag
               end
             when :li
               indentation = "\t" * (indentation_level_for_list_item(node) - 1)
-              "#{indentation}#{(node.parent.name == "ol" ? "#" : "*")} #{node.text}"
+              if node.parent.name == "ol"
+                position = node['data-position']
+                "#{indentation}#{position}. #{node.text}"
+              else
+                "#{indentation}* #{node.text}"
+              end
             when :blockquote
               nesting = ">" * (indentation_level_for_blockquote(node) + 1)
               nesting + " " + node.text
