@@ -1,6 +1,6 @@
 source :gemcutter
 
-
+gem 'nokogiri', "~> 1.4.4"
 
 group :development do
   gem "shoulda", ">= 0"

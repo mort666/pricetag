@@ -1,3 +1,3 @@
-require 'lib/processors/base'
-require 'lib/processors/markdown'
-require 'lib/processors/textile'
+require 'pricetag/processors/base'
+require 'pricetag/processors/markdown'
+require 'pricetag/processors/textile'
