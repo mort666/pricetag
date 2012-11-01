@@ -23,7 +23,7 @@ module PriceTag
             Textile::process!(node, options)
           end
 
-          output = CGI.unescapeHTML(@textile.root.inner_html)
+          output = CGI.unescapeHTML(@textile.root.content)
           output += Markdown::text_for_references(@references) if options[:link_style] == :reference
 
           return output
@@ -62,6 +62,8 @@ module PriceTag
               "#{node.name}. #{node.text}"
             when :li
               "#{(node.parent.name == "ol" ? "#" : "*") * indentation_level_for_list_item(node)} #{node.text}"
+            when :td
+              "|#{node.text}|"
             when :blockquote
               "bq. #{node.text}"
             when :a
@@ -91,7 +93,13 @@ module PriceTag
               node.parent.name.to_sym == :pre ? node.to_s : "@#{node.text}@"
             when :tt
               "@#{node.text}@"
-            when :p, :ul, :ol
+            when :br
+              " \n"
+            when :table 
+              "\n#{node.text}\n"       
+            when :tr
+              "#{node.text}\n"
+            when :p, :ul, :ol, 
               node.text
             else
              CGI.unescapeHTML(node.to_s)
