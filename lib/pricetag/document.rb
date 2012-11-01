@@ -1,7 +1,7 @@
 module PriceTag
   class Document
     def initialize(html)
-      @xml = Nokogiri::XML("<root>" + html + "</root>") do |config|
+      @xml = Nokogiri::HTML("<root>" + html + "</root>") do |config|
         config.strict.noent
       end
 
