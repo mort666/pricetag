@@ -4,11 +4,11 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{pricetag}
-  s.version = "0.1.0"
+  s.name = %q{mort666-pricetag}
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Mattt Thompson"]
+  s.authors = ["Mattt Thompson", "Stephen Kapp"]
   s.date = %q{2010-11-29}
   s.description = %q{PriceTag converts HTML documents into light markup languages. Currently supports Markdown and Textile.}
   s.email = %q{m@mattt.me}
@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
     "lib/pricetag/version.rb",
     "test/helper.rb"
   ]
-  s.homepage = %q{http://github.com/mattt/pricetag}
+  s.homepage = %q{http://github.com/mort666/pricetag}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
