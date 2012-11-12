@@ -54,10 +54,10 @@ module PriceTag
               case style
                 when :setext
                   separator = (tag == :h1 ? "=" : "-")
-                  "#{node.text}\n#{separator * node.text.length}"
+                  "#{node.text}\n#{separator * node.text.length}\n"
                 when :atx
                   octothorps = "#" * level_for_heading(node)
-                  "#{octothorps} #{node.text}"
+                  "#{octothorps} #{node.text}\n"
               end
             when :li
               indentation = "\t" * (indentation_level_for_list_item(node) - 1)
@@ -93,9 +93,9 @@ module PriceTag
               else
                 "![#{node['alt']}](#{node['href']})"
               end
-            when :em
+            when :em, :i
               "_#{node.text}_"
-            when :strong
+            when :strong, :b
               "**#{node.text}**"
             when :pre
               node.text.match(/^\t/) ? node.text : node.to_s
