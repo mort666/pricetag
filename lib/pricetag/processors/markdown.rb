@@ -23,7 +23,7 @@ module PriceTag
             Markdown::process!(node, options)
           end
 
-          output = CGI.unescapeHTML(@markdown.root.inner_html)
+          output = CGI.unescapeHTML(@markdown.root.content)
           output += Markdown::text_for_references(@references) if options[:link_style] == :reference
 
           return output
@@ -110,6 +110,14 @@ module PriceTag
               "`#{node.text}`"
             when :br
               "  \n"
+            when :td, :th
+              "#{node.text}|"
+            when :thead 
+              "#{node.text}|----------|----------|\n"
+            when :table, :tbody, :tfooter 
+              "#{node.text}"
+            when :tr
+              "|#{node.text.gsub("\n","")}\n"
             when :hr
               "- - -"
             when :p, :span, :ul, :ol
