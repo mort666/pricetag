@@ -59,9 +59,9 @@ module PriceTag
         def text_for_node(node, options = {})
           case tag = node.name.to_sym
             when :h1, :h2, :h3, :h4, :h5, :h6
-              "#{node.name}. #{node.text}"
-            when :li
-              "#{(node.parent.name == "ol" ? "#" : "*") * indentation_level_for_list_item(node)} #{node.text}"
+              "#{node.name}. #{node.text}\n"
+            when :li 
+              "\n#{(node.parent.name == "ol" ? "#" : "*") * indentation_level_for_list_item(node)} #{node.text}"
             when :td
               "|#{node.text}|"
             when :blockquote
@@ -99,7 +99,9 @@ module PriceTag
               "\n#{node.text}\n"       
             when :tr
               "#{node.text}\n"
-            when :p, :ul, :ol, 
+            when :ul, :ol 
+              "#{node.text}\n\n"
+            when :p
               node.text
             else
              CGI.unescapeHTML(node.to_s)
