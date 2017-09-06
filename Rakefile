@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = "PriceTag converts HTML documents into light markup languages. Currently supports Markdown and Textile."
   gem.email = "m@mattt.me"
   gem.authors = ["Mattt Thompson"]
-  
+
   gem.add_development_dependency 'nokogiri', '> 1.4'
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -30,21 +30,4 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
 task :default => :test
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "pricetag #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
