@@ -1,9 +1,9 @@
 source :gemcutter
 
-gem 'nokogiri', "~> 1.8.0"
+gem 'nokogiri', '~> 1.10.4'
 
 group :development do
   gem "shoulda", ">= 0"
   gem "bundler"
-  gem "jeweler"
+  gem "jeweler", ">= 2.3.7"
 end
