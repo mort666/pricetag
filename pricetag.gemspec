@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mort666-pricetag}
-  s.version = "0.1.14"
+  s.version = "0.1.15"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mattt Thompson", "Stephen Kapp"]
@@ -43,20 +43,20 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["> 1.5.1"])
-      s.add_development_dependency(%q<nokogiri>, ["> 1.8"])
+      s.add_development_dependency(%q<shoulda>, ["~> 4.0.0"])
+      s.add_development_dependency(%q<bundler>)
+      s.add_development_dependency(%q<jeweler>)
+      s.add_development_dependency(%q<nokogiri>, ["~> 1.14.3"])
     else
-      s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["> 1.5.1"])
-      s.add_dependency(%q<nokogiri>, ["> 1.8"])
+      s.add_dependency(%q<shoulda>, ["~> 4.0.0"])
+      s.add_dependency(%q<bundler>)
+      s.add_dependency(%q<jeweler>)
+      s.add_dependency(%q<nokogiri>, ["~> 1.14.3"])
     end
   else
-    s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["> 1.5.1"])
-    s.add_dependency(%q<nokogiri>, ["> 1.8"])
+    s.add_dependency(%q<shoulda>, ["~> 4.0.0"])
+    s.add_dependency(%q<bundler>)
+    s.add_dependency(%q<jeweler>)
+    s.add_dependency(%q<nokogiri>, ["~> 1.14.3"])
   end
 end

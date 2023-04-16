@@ -1,3 +1,3 @@
 module PriceTag
-  Version = VERSION = '0.1.10'
+  Version = VERSION = '0.1.15'
 end

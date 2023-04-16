@@ -1,9 +1,4 @@
-source :gemcutter
+source 'https://rubygems.org'
 
-gem 'nokogiri', "~> 1.8.0"
-
-group :development do
-  gem "shoulda", ">= 0"
-  gem "bundler"
-  gem "jeweler"
-end
+# Specify your gem's dependencies in qualys_api.gemspec
+gemspec

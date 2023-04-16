@@ -12,14 +12,14 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name = "pricetag"
-  gem.homepage = "http://github.com/mattt/pricetag"
+  gem.homepage = "http://github.com/mort666/pricetag"
   gem.license = "MIT"
   gem.summary = "Convert HTML into your favorite lightweight markup language"
   gem.description = "PriceTag converts HTML documents into light markup languages. Currently supports Markdown and Textile."
-  gem.email = "m@mattt.me"
-  gem.authors = ["Mattt Thompson"]
+  gem.email = ["m@mattt.me", "mort666@virus.org"]
+  gem.authors = ["Mattt Thompson", "Stephen Kapp"]
 
-  gem.add_development_dependency 'nokogiri', '> 1.4'
+  gem.add_development_dependency 'nokogiri', '~> 1.14.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
